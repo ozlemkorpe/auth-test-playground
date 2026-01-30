@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Auth Playground</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont;
+      background: #0f172a;
+      color: #e5e7eb;
+      margin: 0;
+      padding: 40px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #94a3b8;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: #020617;
+      border: 1px solid #1e293b;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+
+    .hint {
+      color: #94a3b8;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      border: 1px solid #334155;
+      background: #020617;
+      color: #e5e7eb;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #2563eb;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+
+    code {
+      display: block;
+      background: #020617;
+      border: 1px solid #1e293b;
+      padding: 10px;
+      border-radius: 6px;
+      font-size: 13px;
+      margin-top: 10px;
+      color: #a5f3fc;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>🔐 Auth Playground</h1>
+  <div class="subtitle">
+    Path-based authentication demo (Form · Basic · Bearer · API Key)
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <h2>Form Authentication</h2>
+      <div class="hint">Session + Cookie</div>
+
+      <form method="POST" action="/form/login">
+        <input name="username" placeholder="username (admin)" />
+        <input name="password" type="password" placeholder="password (1234)" />
+        <button type="submit">Login</button>
+      </form>
+
+      <p style="margin-top:12px">
+        <a href="/form">Go to /form →</a>
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Basic Authentication</h2>
+      <div class="hint">Browser native auth dialog</div>
+
+      <code>
+username: admin
+password: 1234
+      </code>
+
+      <p style="margin-top:12px">
+        <a href="/basic">Go to /basic →</a>
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Bearer (JWT)</h2>
+      <div class="hint">Authorization header</div>
+
+      <code>
+POST /bearer/login
+{
+  "username": "admin",
+  "password": "1234"
+}
+      </code>
+
+      <code>
+GET /bearer
+Authorization: Bearer &lt;token&gt;
+      </code>
+    </div>
+
+    <div class="card">
+      <h2>API Key</h2>
+      <div class="hint">x-api-key header</div>
+
+      <code>
+GET /apikey
+x-api-key: my-api-key-123
+      </code>
+    </div>
+
+  </div>
+</body>
+</html>
