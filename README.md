@@ -123,16 +123,6 @@ x-api-key: my-api-key-123
 
 ---
 
-## 🧪 Use Cases
-
-- QA authentication testing
-- Automation framework demos
-- Security training
-- Interview / teaching playground
-- Comparing auth mechanisms side by side
-
----
-
 ## ⚠️ Notes
 
 - Secrets are **hardcoded on purpose** for demo simplicity
@@ -141,15 +131,6 @@ x-api-key: my-api-key-123
 
 ---
 
-## 🧩 Ideas to Extend
-
-- `/whoami` endpoint
-- Auth-agnostic `/protected` endpoint
-- Token expiration controls
-- Rate limiting per auth type
-- OAuth2 mock provider
-
----
 
 ## 📜 License
 
@@ -158,4 +139,4 @@ MIT — use freely for learning and demos.
 ---
 
 Happy testing 🔍  
-Auth Playground
+
